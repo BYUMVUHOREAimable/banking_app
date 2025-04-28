@@ -6,9 +6,17 @@ import net.javaguides.banking.entity.Account;
 public class AccountMapper {
     public static Account mapToAccount(AccountDto accountDto) {
         return new Account(
-                accountDto.getId(),
-                accountDto.getAccountHolderName(),
-                accountDto.getBalance()
+                //The following work with Record Class as DTO
+                accountDto.id(),
+                accountDto.accountHolderName(),
+                accountDto.balance()
+
+                //These work with normal class
+                //To use this comment the above and uncomment the below as well as in accountMapper
+                //accountDto.getId(),
+                //accountDto.getAccountHolderName(),
+                //accountDto.getBalance()
+
 
         );
     }
